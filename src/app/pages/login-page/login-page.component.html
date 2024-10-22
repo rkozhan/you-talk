@@ -1,17 +1,31 @@
-<form action="" class="login-form">
+<form
+    class="login-form"
+    [formGroup]="form"
+    (ngSubmit)="onSubmit()"
+>
     <h1 class="h1 mb60">Login</h1>
 
     <label class="control-label mb16">
         Your username
-        <input type="text" class="control-input" placeholder="Enter Login">
+        <input
+            type="text"
+            class="control-input"
+            placeholder="Enter Login"
+            formControlName="username"
+        >
     </label>
 
     <label class="control-label mb32">
         Your password
-        <input type="text" class="control-input" placeholder="Enter Password">
+        <input
+            type="text"
+            class="control-input"
+            placeholder="Enter Password"
+            formControlName="password"
+        >
     </label>
 
-    <button class="btn btn-shadow">Login</button>
+    <button class="btn btn-shadow" type="submit">Login</button>
 </form>
 
 <div class="login-logo">
