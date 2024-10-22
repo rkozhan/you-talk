@@ -1,9 +1,0 @@
-services:
-  - type: web
-    name: you-talk
-    env: static
-    buildCommand: npm install && npm run build
-    staticPublishPath: dist/you-talk/browser
-    routes:
-      - src: /(.*)
-        dest: /index.html
