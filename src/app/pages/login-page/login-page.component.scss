@@ -13,3 +13,18 @@
         width: 100%;
     }
 }
+
+.password-input {
+    position: relative;
+}
+
+.password-eye-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 12px;
+    background: none;
+    border: none;
+    color: #ffffffbf;
+    cursor: pointer;
+}

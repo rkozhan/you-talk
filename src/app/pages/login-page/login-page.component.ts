@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
@@ -14,6 +14,8 @@ export class LoginPageComponent {
   authService = inject(AuthService)
   router = inject(Router)
 
+  isPassswordVisible = signal<boolean>(true);
+
   form = new FormGroup({
     username: new FormControl(null, Validators.required),
     password: new FormControl(null, Validators.required)
@@ -24,8 +26,7 @@ export class LoginPageComponent {
         //@ts-ignore
         this.authService.login(this.form.value)
           .subscribe(res => {
-            this.router.navigate([''])
-            console.log(res);            
+            this.router.navigate([''])      
         })
     }
       
