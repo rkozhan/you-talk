@@ -1,6 +1,8 @@
 :host {
     display: block;
     padding: 20px 12px;
+    position: relative;
+    background: var(--color-dark);
 }
 
 .main-menu-list {
@@ -38,3 +40,47 @@
     width: 24px;
 }
 
+.to-subscribers {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: var(--color-primary);
+    line-height: 24px;
+}
+
+.to-subscribers-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.sidebar__footer {
+    position: absolute;
+    width: calc(100% - 20px);
+    bottom: 20px;
+    background: var(--color-hover);
+    border-radius: 2px;
+    padding: 4px 16px;
+    display: grid;
+    grid-template-columns: 32px 1fr 16px;
+    grid-gap: 12px;
+    align-items: center;
+}
+
+.sidebar__footer_img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.username-text {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.settings-btn {
+    line-height: 32px;
+    svg {
+        width: 24px;
+        height: 24px;
+    }
+}

@@ -1,6 +1,10 @@
 :host {
-    min-height: 100dvh;
+    height: 100dvh;
     display: grid;
     grid-template-columns: 300px 1fr;
     background-color: rgba($color: #111, $alpha: .7);    
+}
+
+.workspace {
+    padding: 24px;
 }

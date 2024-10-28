@@ -26,6 +26,7 @@ body {
 
 a {
     text-decoration: none;
+    color: inherit;
 }
 
 .skill-tag {
@@ -104,4 +105,11 @@ a {
     font-family: "JetBrains Mono", sans-serif;
     color: var(--color-light);
     margin-top: 8px;
+}
+
+.medium-text {
+    font-family: "jetBrains Mono", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 16px;
 }
