@@ -61,7 +61,6 @@ export class AuthService {
     this.router.navigate(['/login'])
   }
 
-
   saveTokens(res: TokenResponce) {
     this.token = res.access_token
     this.refreshToken = res.refresh_token
