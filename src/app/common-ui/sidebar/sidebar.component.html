@@ -14,9 +14,9 @@
 <p class="medium-text mb20" >Subscribers</p>
 
 @for (profile of subscribers$ | async; track profile.id) {
-
     <app-subscriber-card
-        [profile]="profile" class="menu-item"></app-subscriber-card>
+        [profile]="profile" class="menu-item">
+    </app-subscriber-card>
 }
 
 <div class="mt20 to-subscribers">
@@ -34,7 +34,7 @@
             <img class="sidebar__me_img" src="/assets/imgs/avatar.png" alt="">
         }
 
-        <div class="medium-text sidebar__me_text">{{ me.username }}</div>
+        <a class="medium-text sidebar__me_text" [routerLink]="['profile/me']">{{ me.username }}</a>
 
         <a class="sidebar__me_btn" [routerLink]="['settings']">
             <svg class="sidebar__me_btn-icon" icon="settings"></svg>

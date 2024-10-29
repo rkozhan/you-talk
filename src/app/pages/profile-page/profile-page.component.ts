@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { ProfileHeaderComponent } from "../../common-ui/profile-header/profile-header.component";
 import { ProfileService } from '../../data/services/profile.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
@@ -23,11 +23,16 @@ export class ProfilePageComponent {
 
   me$ = toObservable(this.profileService.me)
 
+  isMe = signal<boolean>(false)
+
   profile$ = this.route.params
     .pipe(
       switchMap( ({id}) => {
-        if (id === 'me') return this.me$               
-
+        if (id === 'me') {
+          this.isMe.set(true)
+          return this.me$              
+        }
+        this.isMe.set(false)
         return this.profileService.getAccount(id)
       })
     )

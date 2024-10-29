@@ -1,7 +1,10 @@
-<img
-    class="subscriber-avatar"
-    [src]="profile.avatarUrl | imgUrl"
-    [alt]="profile.lastName"
->
+<a [routerLink]="['/profile', profile.id]" class="subscriber-card">
 
-<strong class="subtitle">{{ profile.firstName}} {{profile.lastName}}</strong>
+    <img
+        class="subscriber-card__avatar"
+        [src]="profile.avatarUrl | imgUrl"
+        [alt]="profile.lastName"
+    >
+    
+    <div class="subtitle">{{ profile.firstName}} {{profile.lastName}}</div>
+</a>

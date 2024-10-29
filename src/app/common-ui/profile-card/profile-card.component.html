@@ -7,7 +7,7 @@
                 class="profile-card__avatar"
             >
             <div class="profile-card__name">
-                <strong class="h6">{{ profile.firstName}} {{ profile.lastName}}</strong>
+                <a class="h6" [routerLink]="['/profile', profile.id]">{{ profile.firstName}} {{ profile.lastName}}</a>
                 <span class="subtitle">{{profile.username}}</span>
             </div>
         </div>

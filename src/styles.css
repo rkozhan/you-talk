@@ -4,6 +4,7 @@
 :root {
     --color-dark: #000;
     --color-light: #ddd;
+    --color-light-transparent: rgba(255,255,255,.75);
     --color-primary: #ae7aff;
     --color-gray: #5f646d;
     --color-hover: #161616;
@@ -121,6 +122,42 @@ a {
     color: var(--color-light);
     margin-top: 8px;
 }
+
+.form-label {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+}
+
+.form-label__text {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 16px;
+    color: var(--color-light-transparent);
+}
+
+.form-input {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: var(--color-light);
+    background: none;
+    border: none;
+    border-bottom: 1px solid var(--color-light);
+    height: 33px;
+
+    &:focus-visible {
+        outline: 1px solid var(--color-primary);
+    }
+}
+
+.form-textarea {
+    height: 84px;
+    resize: none;
+}
+
 
 .medium-text {
     font-family: "jetBrains Mono", sans-serif;
