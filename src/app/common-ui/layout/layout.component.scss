@@ -1,5 +1,6 @@
 :host {
     height: 100dvh;
+    overflow-y: auto;
     display: grid;
     grid-template-columns: 300px 1fr;
     background-color: rgba($color: #111, $alpha: .7);    

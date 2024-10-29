@@ -21,11 +21,7 @@ export class ProfileService {
   getMe() {
     return this.http.get<Profile>(`${this.baseApiUrl}account/me`)
       .pipe(
-        tap(res => {
-          console.log(res);
-          
-          this.me.set(res)
-        }) // Set the fetched profile into the signal
+        tap(res => this.me.set(res)) // Set the fetched profile into the signal
       )
   }
 

@@ -1,6 +1,6 @@
 <img src="/assets/svg/logo.svg" alt="" class="ml16 mb20">
 
-<nav>
+<nav class="mb20">
     <ul class="main-menu-list">
         <li *ngFor="let menuItem of menuItems">
             <a class="menu-item" [routerLink]="[menuItem.link]">
@@ -16,10 +16,10 @@
 @for (profile of subscribers$ | async; track profile.id) {
 
     <app-subscriber-card
-        [profile]="profile"></app-subscriber-card>
+        [profile]="profile" class="menu-item"></app-subscriber-card>
 }
 
-<div class="mt-20 to-subscribers">
+<div class="mt20 to-subscribers">
     <a [routerLink]="['/subscribers']" class="to-subscribers-link medium-text">
         All Subscribers
     </a>
@@ -29,15 +29,15 @@
 <footer class="sidebar__footer">
     @if (me(); as me) {
         @if (me.avatarUrl) {
-            <img class="sidebar__footer_img" [src]="me.avatarUrl | imgUrl " alt="">
+            <img class="sidebar__me_img" [src]="me.avatarUrl | imgUrl " alt="">
         } @else {
-            <img class="sidebar__footer_img" src="/assets/imgs/avatar.png" alt="">
+            <img class="sidebar__me_img" src="/assets/imgs/avatar.png" alt="">
         }
 
-        <div class="medium-text username-text">{{ me.username }}</div>
+        <div class="medium-text sidebar__me_text">{{ me.username }}</div>
 
-        <a class="settings-btn" [routerLink]="['settings']">
-            <svg icon="settings"></svg>
+        <a class="sidebar__me_btn" [routerLink]="['settings']">
+            <svg class="sidebar__me_btn-icon" icon="settings"></svg>
         </a>
     }
 </footer>

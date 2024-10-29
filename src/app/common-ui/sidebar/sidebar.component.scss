@@ -45,12 +45,14 @@
     gap: 10px;
     align-items: center;
     color: var(--color-primary);
-    line-height: 24px;
+    padding-block: 4px;
 }
 
+
+
 .to-subscribers-icon {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
 }
 
 .sidebar__footer {
@@ -61,26 +63,28 @@
     border-radius: 2px;
     padding: 4px 16px;
     display: grid;
-    grid-template-columns: 32px 1fr 16px;
+    grid-template-columns: 32px 1fr 24px;
     grid-gap: 12px;
     align-items: center;
+    color: var(--color-primary);
 }
 
-.sidebar__footer_img {
+.sidebar__me_img {
     width: 32px;
-    height: 32px;
+    aspect-ratio: 1/1;
     border-radius: 50%;
 }
 
-.username-text {
-    color: var(--color-primary);
+.sidebar__me_text {
     font-weight: 700;
 }
 
-.settings-btn {
-    line-height: 32px;
-    svg {
-        width: 24px;
-        height: 24px;
-    }
+.sidebar__me_btn {
+    display: flex;
+}
+
+.sidebar__me_btn-icon {
+    margin-block: auto;
+    width: 18px;
+    height: 18px;
 }
