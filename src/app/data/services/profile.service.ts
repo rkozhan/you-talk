@@ -43,7 +43,7 @@ export class ProfileService {
       )
   }
 
-  // Update the profile
+  // Update the profile (partial - not all fields)
   patchProfile(profile: Partial<Profile>) {
     return this.http.patch<Profile>(
       `${this.baseApiUrl}account/me`,

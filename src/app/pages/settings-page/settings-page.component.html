@@ -1,7 +1,7 @@
 <app-profile-header ></app-profile-header>
 
-<form class="profile-form__wrapper" [formGroup]="form">
-    <div class="profile-form">
+<form class="settings-form__wrapper" [formGroup]="form">
+    <div class="settings-form mb20">
         <div class="two-columns">
             <label class="form-label">
                 <span class="form-label__text">First Name</span>
@@ -22,6 +22,11 @@
         <label class="form-label">
             <span class="form-label__text">About</span>
             <textarea class="form-input form-textarea" formControlName="description" rows="4"></textarea>
+        </label>
+
+        <label class="form-label">
+            <span class="form-label__text">Avatar</span>
+            <app-avatar-upload></app-avatar-upload>
         </label>
     
         <label class="form-label">
