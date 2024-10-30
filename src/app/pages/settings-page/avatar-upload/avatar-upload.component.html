@@ -1,6 +1,12 @@
 <img [src]="preview()" alt="avatar" class="avatar">
 
-<div class="dropzone" tabindex="0" (keyup,enter)="fileDrop.click()">
+<div
+    class="dropzone"
+    tabindex="0"
+    (keyup,enter)="fileDrop.click()"
+    (fileDropped)="onFileDrop($event)"
+    dnd
+>
     <div class="dropzone-content">
         <svg class="dropzone-svg" icon="upload"></svg>
         <span class="medium-text">Перетащите изображение или Загрузите</span>
@@ -14,3 +20,5 @@
         (change)="fileBrowserHandler($event)"
     >
 </div>
+
+<!-- <div dnd>another element with dnd directive: on event dragover assigns class .fileover</div> -->
