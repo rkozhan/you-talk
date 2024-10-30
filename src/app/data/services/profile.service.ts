@@ -56,9 +56,6 @@ export class ProfileService {
     const fd = new FormData()
     fd.append('image', file)
 
-    return this.http.post<Profile>(`${this.baseApiUrl}account/me/avatar`, fd) // Make sure to handle the response
-    .pipe(
-      tap(updatedProfile => this.me.set(updatedProfile)) // Update the signal with the new profile after uploading
-    );
+    return this.http.post<Profile>(`${this.baseApiUrl}account/upload_image`, fd) // Make sure to handle the response
   }  
 }

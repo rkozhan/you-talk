@@ -12,6 +12,8 @@ import { DndDirective } from '../../../common-ui/directives/dnd.directive';
 export class AvatarUploadComponent {
   preview = signal<string>('/assets/imgs/avatar.png')
 
+  avatar: File | null = null
+
   fileBrowserHandler(event: Event) {
     const file: File | undefined = (event.target as HTMLInputElement)?.files?.[0]
     this.processFile(file)
@@ -31,5 +33,6 @@ export class AvatarUploadComponent {
     }
     
     reader.readAsDataURL(file)
+    this.avatar = file
   }
 }
