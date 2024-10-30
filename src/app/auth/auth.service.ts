@@ -39,21 +39,17 @@ export class AuthService {
     )
   }
 
-  refreshAuthToken() {
-    console.log("refreshing");
-    
+  refreshAuthToken() {    
     return this.http.post<TokenResponce>(
       `${this.baseApiUrl}refresh`,
-      {
-        refresh_token: this.refreshToken
-      }
+      {refresh_token: this.refreshToken}
     ).pipe(
-      tap(val => this.saveTokens(val)),
-      catchError(err => {
-        this.logout()
-        return throwError(err)
-    })    
-  )
+        tap(val => this.saveTokens(val)),
+        catchError(err => {
+          this.logout()
+          return throwError(err)
+        })    
+    )
   }
 
   logout() {

@@ -15,7 +15,7 @@ import { AvatarUploadComponent } from "./avatar-upload/avatar-upload.component";
 export class SettingsPageComponent {
   fb = inject(FormBuilder)
   profileService = inject(ProfileService)
-
+  
   //takes child or children as angular component ( before angular17)
   @ViewChild(AvatarUploadComponent) avatarUploader!: AvatarUploadComponent
 

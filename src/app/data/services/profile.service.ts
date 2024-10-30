@@ -13,6 +13,7 @@ export class ProfileService {
 
   // Initialize a signal for the user's profile
   me = signal<Profile | null>(null); // Set initial value to null
+  filteredProfiles = signal<Profile[]>([]); // Set initial value to null
   
   baseApiUrl = 'https://icherniakov.ru/yt-course/'
   //baseApiUrl = 'https://api.escuelajs.co/api/v1/'
@@ -57,5 +58,13 @@ export class ProfileService {
     fd.append('image', file)
 
     return this.http.post<Profile>(`${this.baseApiUrl}account/upload_image`, fd) // Make sure to handle the response
-  }  
+  }
+
+  filterProfiles(params: Record<string, any>) {
+    return this.http.get<Pageble<Profile>>(`${this.baseApiUrl}account/accounts`, {
+      params
+    }).pipe(
+      tap(res => this.filteredProfiles.set(res.items))
+    )
+  }
 }

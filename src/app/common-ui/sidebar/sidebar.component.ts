@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { SvgIconComponent } from "../svg-icon/svg-icon.component";
 import { NgForOf, AsyncPipe, JsonPipe } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { SubscriberCardComponent } from "./subscriber-card/subscriber-card.component";
 import { ProfileService } from '../../data/services/profile.service';
 import { firstValueFrom } from 'rxjs';
@@ -16,6 +16,7 @@ import { ImgUrlPipe } from "../../data/helpers/pipes/img-url.pipe";
     AsyncPipe,
     JsonPipe,
     RouterLink,
+    RouterLinkActive,
     SubscriberCardComponent,
     ImgUrlPipe
 ],
